@@ -474,6 +474,11 @@ function Chronoline(domElement, events, options) {
                 addElemClass(t.paperType, elem.node, 'chronoline-event');
 
                 elem.attr('title', myEvent.title);
+
+                if (myEvent.clickAction) {
+                    elem.click(myEvent.clickAction);
+                }
+
                 if(t.tooltips){
                     var description = myEvent.description;
                     var title = myEvent.title;

@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="chrome=1" />
     <meta name="description" content="Chronoline.js : chronoline.js is a library for making a chronology timeline out of events on a horizontal timescale." />
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="chronoline/chronoline.css">
 
     <title>Chronoline.js</title>
   </head>
@@ -97,6 +97,11 @@
     <script type="text/javascript">
       $(document).ready(function(){
 
+
+      var action = function () {
+        console.log(this.attrs.title)
+      }
+
       var events = [
       {dates: [new Date(2011, 2, 31)], title: "2011 Season Opener", section: 0},
       {dates: [new Date(2012, 1, 29)], title: "Spring Training Begins", section: 2},
@@ -107,8 +112,8 @@
       {dates: [new Date(2012, 3, 13), new Date(2012, 3, 15)], title: "Milwaukee Brewers @ Atlanta Braves", section: 1},
       {dates: [new Date(2012, 3, 9), new Date(2012, 3, 11)], title: "Boston Red Sox @ Toronto Blue Jays", section: 1},
       {dates: [new Date(2012, 3, 13), new Date(2012, 3, 15)], title: "Baltimore Orioles @ Toronto Blue Jays", section: 1},
-      {dates: [new Date(2012, 3, 17), new Date(2012, 3, 19)], title: "Tampa Bay Rays @ Toronto Blue Jays", section: 1},
-      {dates: [new Date(2012, 3, 20), new Date(2012, 3, 23)], title: "Toronto Blue Jays @ Kansas City Royals", section: 1},
+      {dates: [new Date(2012, 3, 17), new Date(2012, 3, 19)], title: "Tampa Bay Rays @ Toronto Blue Jays", section: 1, clickAction: action},
+      {dates: [new Date(2012, 3, 20), new Date(2012, 3, 23)], title: "Toronto Blue Jays @ Kansas City Royals", section: 1, clickAction: action},
       {dates: [new Date(2012, 3, 5)], title: "Opening Day for 12 Teams", section: 1},
       {dates: [new Date(2012, 2, 28)], title: "Seattle Mariners v. Oakland A's", section: 1, description: "Played in Japan!"},
       {dates: [new Date(2012, 4, 18), new Date(2012, 5, 24)], title: "Interleague Play", section: 1},
