@@ -234,6 +234,7 @@ function Chronoline(domElement, events, options) {
     // need to toss the time variance bits
     for(var i = 0; i < events.length; i++){
         for(var j = 0; j < events[i].dates.length; j++){
+            if (typeof events[i].dates[j] == 'string') events[i].dates[j] = new Date(events[i].dates[j])
             events[i].dates[j] = new Date(events[i].dates[j].getTime());
             events[i].dates[j].stripTime();
         }
@@ -245,6 +246,7 @@ function Chronoline(domElement, events, options) {
     if(t.sections !== null){
         for(var i = 0; i < t.sections.length; i++){
             for(var j = 0; j < t.sections[i].dates.length; j++){
+                if (typeof events[i].dates[j] == 'string') events[i].dates[j] = new Date(events[i].dates[j])
                 t.sections[i].dates[j] = new Date(t.sections[i].dates[j].getTime());
                 t.sections[i].dates[j].stripTime();
             }
