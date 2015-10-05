@@ -476,6 +476,9 @@ function Chronoline(domElement, events, options) {
                 elem.attr('title', myEvent.title);
 
                 if (myEvent.clickAction) {
+                    var evt = myEvent.clickAction
+                 
+                    // console.log(evt, myEvent)
                     elem.click(myEvent.clickAction);
                 }
 
